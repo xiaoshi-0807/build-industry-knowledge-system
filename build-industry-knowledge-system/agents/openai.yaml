@@ -1,0 +1,4 @@
+interface:
+  display_name: "行业认知体系搭建"
+  short_description: "从零完成行业数据库、竞品、内容、知识地图与持续情报系统"
+  default_prompt: "使用 $build-industry-knowledge-system 从头到尾搭建目标行业的完整认知体系。"
