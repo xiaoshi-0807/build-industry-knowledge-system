@@ -2,6 +2,46 @@
 
 Replace variables in braces. Run the tasks in order for a full system.
 
+## Task 0: Guided Intake For A Tailored Full Report
+
+Use this when the user wants a complete industry report or knowledge system but has not provided enough context.
+
+```text
+使用 $build-industry-knowledge-system，先不要直接开始研究。
+
+请先用一轮问题引导我补全研究简报，问题包括：
+行业/细分赛道、市场范围、研究目标、我的岗位角色或身份、目标用户、
+已有资源与约束、必须分析的竞品/平台/账号、重点维度、报告深度、输出语言和保存位置。
+
+我回答后，请你整理成 Research Brief，然后直接从头到尾生成完整行业认知体系，
+包括行业数据库、竞品深挖、平台内容分析、三级知识地图和持续情报系统。
+```
+
+## Full-System Prompt With Intake Answers
+
+```text
+使用 $build-industry-knowledge-system，从头到尾搭建 {市场} 的 {行业/细分赛道} 行业认知体系。
+
+我的身份/岗位角色是：{角色}。
+研究目标是：{目标}。
+目标用户/客户是：{目标用户}。
+已有资源或约束是：{资源/约束}。
+必须分析的竞品/平台/账号是：{竞品/平台/账号；没有就你来选}。
+重点维度是：{重点维度}。
+报告深度是：{快速版/标准版/深度版}。
+输出语言和保存位置是：{语言/路径}。
+
+请先整理 Research Brief，然后直接执行完整五模块：
+1. 行业数据库
+2. 竞品网站深度分析
+3. 平台 Top 账号与内容分析
+4. 三级行业知识地图
+5. 持续情报系统
+
+所有现代事实必须联网核验并标注来源和日期，明确区分事实、推断和建议。
+最后运行完整性审计，并告诉我生成了哪些关键文件。
+```
+
 ## Task 1: Establish The Industry Database
 
 ```text
