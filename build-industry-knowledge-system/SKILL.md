@@ -102,6 +102,22 @@ Research Brief
 
 Then proceed directly to the requested output. For a full-system request, execute Modules 1-5 and save the complete project. Do not stop at the brief unless the user explicitly asks for confirmation only.
 
+## Output Language
+
+Default the final generated report and all reader-facing Markdown content to Chinese (`中文`) unless the user explicitly requests another language. This includes:
+
+- The root industry map.
+- Landscape and focused records.
+- Competitor deep dives.
+- Social/content analysis.
+- Knowledge map.
+- Continuous intelligence templates.
+- Final completion summary to the user.
+
+Keep file and folder names in a stable, filesystem-friendly style. English filenames are acceptable when they improve compatibility with scripts, URLs, or existing project conventions, but the report body should remain Chinese by default.
+
+If the user specifies another language in the intake answer, use that language for reader-facing content and record it in the `Research Brief`.
+
 ## Choose The Run Mode
 
 - **Full system:** Execute Modules 1-5 in order.
@@ -164,6 +180,7 @@ Where useful, create runnable scripts and configuration rather than only describ
 - After receiving intake answers, do not ask for permission to continue unless the scope is contradictory or impossible. Build the full requested report directly.
 - Keep the user's role and objective visible in every module. For example, an investor-oriented report should emphasize market structure, growth, defensibility, and risks; a content-creator report should emphasize audience language, platforms, hooks, and content systems; a product-builder report should emphasize pain points, jobs-to-be-done, product gaps, pricing, and validation.
 - Tailor competitor and content sampling to the user's market and channel focus. If the user did not provide competitors or platforms, select representative ones and label the selection rule.
+- Write final reports in Chinese by default. Do not switch to English merely because source material, filenames, or competitor websites are English.
 - Keep a task plan for full-system runs and complete each module end to end before moving on.
 - Save findings continuously; do not wait until the end to write files.
 - Use Markdown with stable frontmatter and internal links where the project is a knowledge base.

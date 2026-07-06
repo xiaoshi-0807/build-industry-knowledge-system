@@ -39,6 +39,7 @@ Use this when the user wants a complete industry report or knowledge system but 
 5. 持续情报系统
 
 所有现代事实必须联网核验并标注来源和日期，明确区分事实、推断和建议。
+最终报告正文、知识库正文和最后总结默认全部用中文输出。
 最后运行完整性审计，并告诉我生成了哪些关键文件。
 ```
 
