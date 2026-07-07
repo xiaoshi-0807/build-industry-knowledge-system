@@ -14,12 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout target repo
-        # 升级到了官方最新的 v4 版本，兼容最新环境
         uses: actions/checkout@v4
 
       - name: Sync upstream
-        # 核心修改：将原本的 v3.4.1 升级到最新的 v3.4.5（支持最新的 Node 运行环境）
-        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.5
+        # 核心修改：将原本具体的 @v3.x.x 替换为 @master 
+        # 直接使用该插件主分支的最新稳定代码，完美解决版本和 Node 兼容问题
+        uses: aormsby/Fork-Sync-With-Upstream-action@master
         with:
           target_repo_token: ${{ secrets.GITHUB_TOKEN }}
           upstream_sync_repo: xianxie6/build-industry-knowledge-system
