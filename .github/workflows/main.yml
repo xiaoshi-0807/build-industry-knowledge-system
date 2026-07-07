@@ -17,9 +17,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Sync upstream
-        # 核心修改：将原本具体的 @v3.x.x 替换为 @master 
-        # 直接使用该插件主分支的最新稳定代码，完美解决版本和 Node 兼容问题
-        uses: aormsby/Fork-Sync-With-Upstream-action@master
+        # 核心修改：使用 @v3，让 GitHub 自动拉取 v3 系列下修复了 Node 问题的最新稳定版
+        uses: aormsby/Fork-Sync-With-Upstream-action@v3
         with:
           target_repo_token: ${{ secrets.GITHUB_TOKEN }}
           upstream_sync_repo: xianxie6/build-industry-knowledge-system
