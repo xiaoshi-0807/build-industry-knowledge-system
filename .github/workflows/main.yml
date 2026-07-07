@@ -6,6 +6,7 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch: # 允许你随时在网页上点击按钮手动触发同步
 
+# 核心修复：直接在代码里强制索要写入权限，绕过网页设置
 permissions:
   contents: write
 
@@ -17,8 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Sync upstream
-        # 核心修改：使用 @v3，让 GitHub 自动拉取 v3 系列下修复了 Node 问题的最新稳定版
-        uses: aormsby/Fork-Sync-With-Upstream-action@v3
+        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
         with:
           target_repo_token: ${{ secrets.GITHUB_TOKEN }}
           upstream_sync_repo: xianxie6/build-industry-knowledge-system
