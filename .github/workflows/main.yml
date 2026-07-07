@@ -4,7 +4,7 @@ on:
   schedule:
     # 每天凌晨 0 点（UTC 时间）自动运行一次
     - cron: '0 0 * * *'
-  workflow_dispatch: # 允许你在网页上点击按钮手动触发同步
+  workflow_dispatch: # 允许你随时在网页上点击按钮手动触发同步
 
 jobs:
   sync:
@@ -17,10 +17,9 @@ jobs:
         uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
         with:
           target_repo_token: ${{ secrets.GITHUB_TOKEN }}
-          # 填入原作者的 GitHub 用户名/项目名 (例如: facebook/react)
-          upstream_repository: 原作者用户名/项目名
-          # 填入原项目和你自己项目正在使用的分支名（通常是 main 或 master）
-          target_branch: main
-          upstream_branch: main
-          # 如果有冲突，是强行覆盖(true)还是报错(false)
-          force: false
+          # 以下是更新后的新参数名称：
+          upstream_sync_repo: xianxie6/build-industry-knowledge-system
+          target_sync_branch: main
+          upstream_sync_branch: main
+          # 如果你的仓库有独立修改，不强制覆盖
+          upstream_pull_args: --rebase
