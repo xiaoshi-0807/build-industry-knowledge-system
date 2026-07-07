@@ -6,20 +6,23 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch: # 允许你随时在网页上点击按钮手动触发同步
 
+permissions:
+  contents: write
+
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout target repo
+        # 升级到了官方最新的 v4 版本，兼容最新环境
         uses: actions/checkout@v4
 
       - name: Sync upstream
-        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
+        # 核心修改：将原本的 v3.4.1 升级到最新的 v3.4.5（支持最新的 Node 运行环境）
+        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.5
         with:
           target_repo_token: ${{ secrets.GITHUB_TOKEN }}
-          # 以下是更新后的新参数名称：
           upstream_sync_repo: xianxie6/build-industry-knowledge-system
           target_sync_branch: main
           upstream_sync_branch: main
-          # 如果你的仓库有独立修改，不强制覆盖
           upstream_pull_args: --rebase
